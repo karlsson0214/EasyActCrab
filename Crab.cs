@@ -12,7 +12,7 @@ namespace EasyCrab
 {
     internal class Crab : Actor
     {
-        private float rotationSpeed = 90f;
+        private float rotationSpeed = 90f; 
         private float speed = 200f;
         private int score = 0;
 
@@ -21,8 +21,7 @@ namespace EasyCrab
         /// </summary>
         public Crab()
         {
-            ImageName = "crab";
-            Position = new Vector2(400, 300);
+
             //ShowScore();
         }
 

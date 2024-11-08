@@ -17,7 +17,7 @@ namespace EasyCrab
 
         public Lobster(Crab crab)
         {
-            ImageName = "lobster";
+
             this.crab = crab;
         }
 

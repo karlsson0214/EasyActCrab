@@ -13,7 +13,7 @@ namespace EasyCrab
 
         public Worm()
         {
-            ImageName = "worm";
+
             
         }
         public override void Update(GameTime gameTime)

@@ -42,7 +42,7 @@ namespace EasyCrab
         { 
             // Add objects to the game world.
             Crab crab = new Crab();
-            Add(crab);
+            Add(crab, "crab", 400, 300);
             AddWorms();
             AddLobsters(crab);
 
@@ -68,27 +68,22 @@ namespace EasyCrab
                 float x = random.Next(Width);
                 float y = random.Next(Height);
                 Worm worm = new Worm();
-                worm.Position = new Vector2(x, y);
-                Add(worm);
+                Add(worm, "worm", x, y);
             }
         }
         private void AddLobsters(Crab crab)
         {
             Lobster lobster = new Lobster(crab);
-            lobster.Position = new Vector2(100, 100);
-            Add(lobster);
+            Add(lobster, "lobster", 100, 100);
 
             Lobster lobster2 = new Lobster(crab);
-            lobster2.Position = new Vector2(100, Height - 100);
-            Add(lobster2);
+            Add(lobster2, "lobster", 100, Height - 100);
 
             Lobster lobster3 = new Lobster(crab);
-            lobster3.Position = new Vector2(Width - 100, 100);
-            Add(lobster3);
+            Add(lobster3, "lobster", Width - 100, 100);
 
             Lobster Lobster4 = new Lobster(crab);
-            Lobster4.Position = new Vector2(Width - 100, Height - 100);
-            Add(Lobster4);
+            Add(Lobster4, "lobster", Width - 100, Height - 100);
         }
     }
 }
