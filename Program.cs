@@ -1,6 +1,7 @@
-﻿
-// Create game and add the world to it.
-using var game = new EasyMonoGame.EasyGame(new EasyCrab.CrabWorld());
-// Run game.
-game.Run();
+﻿using EasyMonoGame;
+using EasyCrab; // The namespace of your game.
+// Set starting world.
+EasyGame.Instance.ActiveWorld = new CrabWorld();
+// Run the game.
+EasyGame.Instance.Run();
 
