@@ -15,38 +15,15 @@ namespace EasyCrab
         /// </summary>
         public CrabWorld() : base(800, 600)
         {
-            LoadContent();
-            AddContent();
-        }
-        /// <summary>
-        /// This method is called by the MonoGame framework when the game is started.
-        /// </summary>
-        public void LoadContent()
-        {
-            // Load game art from the "Content" folder.
-            GameArt.Add("crab");
-            GameArt.Add("crab2");
-            GameArt.Add("worm");
-            GameArt.Add("lobster");
-            GameArt.Add("sand2");
-            /* or
-            string[] names = { "crab", "crab2", "worm", "lobster", "sand2" };
-            GameArt.Add(names); 
-            */
-
-            // set background tile
             BackgroundTileName = "sand2";
 
-        }
-        public void AddContent()
-        { 
             // Add objects to the game world.
             Crab crab = new Crab();
             Add(crab, "crab", 400, 300);
             AddWorms();
             AddLobsters(crab);
-
         }
+
         /// <summary>
         /// This method is called once per frame by the MonoGame framework.
         /// </summary>
