@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using System;
 
 
-namespace EasyCrab
+namespace EasyActCrab
 {
     internal class CrabWorld : World
     {
@@ -27,13 +27,9 @@ namespace EasyCrab
         /// <summary>
         /// This method is called once per frame by the MonoGame framework.
         /// </summary>
-        /// <param name="gameTime"></param>
-       
-        public override void Update(GameTime gameTime)
-        {
-            // Call Update once per object in the world.
-            base.Update(gameTime);
 
+        public override void Act()
+        {
             // Add game logic for the world here.
             // your code ...
         }

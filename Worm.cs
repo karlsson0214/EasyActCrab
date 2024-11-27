@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyMonoGame;
 
-namespace EasyCrab
+namespace EasyActCrab
 {
     internal class Worm : Actor
     {

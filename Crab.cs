@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyMonoGame;
 
-namespace EasyCrab
+namespace EasyActCrab
 {
     internal class Crab : Actor
     {
-        private float rotationSpeed = 90f; 
-        private float speed = 200f;
+        private float rotationSpeed = 1.5f; 
+        private float speed = 3.3f;
         private int score = 0;
 
         /// <summary>
@@ -30,32 +30,28 @@ namespace EasyCrab
         /// <summary>
         /// The method is called once per frame by the MonoGame framework. 
         /// </summary>
-        /// <param name="gameTime"></param>
-        public override void Update(GameTime gameTime)
+        public override void Act()
         {
-            var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             var keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.Left))
             {
                 // turn left
-                Rotation -= rotationSpeed * deltaTime;
+                Turn(-rotationSpeed);
             }
             if (keyboardState.IsKeyDown(Keys.Right))
             {
                 // turn right
-                Rotation += rotationSpeed * deltaTime;
+                Turn(rotationSpeed);
             }
             if (keyboardState.IsKeyDown(Keys.Up))
             {
                 // move forward
-                var distance = speed * deltaTime;
-                Move(distance);
+                Move(speed);
             }
             else if (keyboardState.IsKeyDown(Keys.Down))
             {
                 // move backward at half speed
-                var distance = speed / 2 * deltaTime;
-                Move(-distance);
+                Move(-speed / 2);
             }
             
             Actor worm = GetOneIntersectingActor(typeof(Worm));
@@ -71,6 +67,7 @@ namespace EasyCrab
                         "You did it!",
                         this.World.Width / 2,
                         this.World.Height / 2);
+                    EasyGame.Instance.IsPaused = true;
                 }
             }
             Actor lobster = GetOneIntersectingActor(typeof(Lobster));
@@ -80,6 +77,7 @@ namespace EasyCrab
                     "GAME OVER",
                     this.World.Width / 2,
                     this.World.Height / 2);
+                EasyGame.Instance.IsPaused = true;
             }
             
         }

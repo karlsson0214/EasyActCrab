@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework;
 using EasyMonoGame;
 
 
-namespace EasyCrab
+namespace EasyActCrab
 {
     internal class Lobster : Actor
     {
-        private float speed = 50f;
+        private float speed = 0.83f;
         private Random random = new Random();
         private Crab crab;
 
@@ -21,13 +21,13 @@ namespace EasyCrab
             this.crab = crab;
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Act()
         {
-            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            float deltaAngle = random.Next(-1800, 1800) * deltaTime;
+
+            float deltaAngle = random.Next(-30, 30);
             Rotation = Rotation + deltaAngle;
             TurnTowards(crab.Position.X, crab.Position.Y);
-            Move(speed * deltaTime);
+            Move(speed);
         }
     }
 }
