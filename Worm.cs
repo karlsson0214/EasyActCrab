@@ -11,14 +11,5 @@ namespace EasyActCrab
     internal class Worm : Actor
     {
 
-        public Worm()
-        {
-
-            
-        }
-        public override void Update(GameTime gameTime)
-        {
-            // do nothing
-        }
     }
 }
